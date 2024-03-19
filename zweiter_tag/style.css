@@ -1,0 +1,12 @@
+/* Formatierung über eine separate CSS-Datei */
+body {
+    background-color: lightgray;
+    font-family: Arial, sans-serif;
+  }
+  
+  .instruction {
+    color: green;
+    font-size: 14pt;
+    font-style: italic;
+  }
+  

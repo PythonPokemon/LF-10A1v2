@@ -1,37 +1,29 @@
-<styhtml lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Stil</title>
-        <!---Style vorlagen die man per id zuweisen kann-->
-        <style>
-            #meintext{
-                color: blue;
-                border-style: solid;
-                background-color: aqua;
-                border-color: azure;
-            }
-
-            article{
-                color: blueviolet;
-                width: 150px;
-            }
-        </style>
-    </head>
-
-    <body>
-        <!--text per id stylen-->
-        <h1 id>Schriftgröße h1</h1>
-        <p id="#meintext">text beschreibung = p</p>
-        <article>M</article>
-        <article>MM</article>
-        <article class="article">M</article>
-        <article class="#meintext">M</article>
-
-        <!--source link zu bildern oder videos-->
-        <img src="img/home.png" alt="home">
-        <a href="breite.html">GFN</a>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arbeitsauftrag</title>
+  <style>
+    /* Formatierung im Kopf der HTML-Datei */
+    h1 {
+      color: blue;
+      font-size: 24pt;
+      font-weight: bold;
+      font-style: italic;
+      text-align: center;
+    }
     
+  </style>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
 
-    </body>
-    </styhtml>
+<!-- Formatierung über Inline-CSS -->
+<h1 style="color: red; background-color: yellow; font-size: 16pt; font-weight: bold; text-align: center;">Arbeitsauftrag</h1>
+
+<!-- Referenzierung der Formatierung über eine separate CSS-Datei -->
+<p class="instruction">Dies ist ein Arbeitsauftrag, der verschiedene Methoden zur Formatierung von HTML demonstriert.</p>
+
+</body>
+</html>
