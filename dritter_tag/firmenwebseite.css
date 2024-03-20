@@ -44,14 +44,14 @@ body {
   
   /* Hintergrundbilder */
   #about {
-    background-image: url("background_about.jpg");
+    background-image: url("construction_site.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     padding: 100px;
   }
   
   #services {
-    background-image: linear-gradient(to left, red, blue);
+    background-image: linear-gradient(to left, #4a4e4d, #222222);
     color: #fff;
     padding: 50px;
   }
