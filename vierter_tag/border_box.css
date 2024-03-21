@@ -28,4 +28,3 @@ body {
   .parent-box:hover .child-box {
     background-color: lightcoral; /* Hintergrundfarbe der Kindbox beim Überfahren mit der Maus ändern */
   }
-  
