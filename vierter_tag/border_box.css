@@ -1,0 +1,31 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif; /* Verwenden der Schriftart Arial oder einer Standardschriftart aus der Gruppe sans-serif */
+    margin: 0; /* Kein Außenabstand um den gesamten Körper der Webseite */
+    padding: 0; /* Kein Innenabstand innerhalb des gesamten Körpers der Webseite */
+  }
+  
+  /* Elternboxen */
+  .parent-box {
+    width: 300px;  /* Breite der Elternbox festlegen */
+    height: 200px; /* Höhe der Elternbox festlegen */
+    background-color: lightblue; /* Hintergrundfarbe der Elternbox festlegen */
+    margin: 20px; /* Außenabstand um die Elternbox festlegen */
+    padding: 20px; /* Innenabstand der Elternbox festlegen */
+    float: left;  /* Float-Eigenschaft festlegen, um die Elternboxen nebeneinander zu platzieren */
+  }
+  
+  /* Kindboxen */
+  .child-box {
+    width: 100%;
+    height: 100%;
+    background-color: lightgreen;
+    text-align: center; /* Textausrichtung in der Kindbox zentrieren */
+    line-height: 200px; /* Zeilenhöhe in der Kindbox festlegen, um den Text vertikal zu zentrieren */
+  }
+  
+  /* Hover-Effekt */
+  .parent-box:hover .child-box {
+    background-color: lightcoral; /* Hintergrundfarbe der Kindbox beim Überfahren mit der Maus ändern */
+  }
+  
