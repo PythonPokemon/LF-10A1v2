@@ -3,11 +3,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
   }
   
   header {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     padding: 20px;
   }
@@ -44,7 +44,7 @@ body {
   
   /* Hintergrundbilder */
   #about {
-    background-image: url("construction_site.jpg");
+    background-image: url("leiste.png");
     background-size: cover;
     background-repeat: no-repeat;
     padding: 100px;
