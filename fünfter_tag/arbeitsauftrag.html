@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Funktionen</title>
+  <link rel="stylesheet" type="text/css" href="arbeitsauftrag.css">
+  <script src="arbeitsauftrag.js" defer></script>
+</head>
+<body>
+
+<!-- Element, dessen Hintergrundfarbe verändert werden soll -->
+<div id="changeColorElement" class="changeable-element">
+  Dies ist das Element, dessen Hintergrundfarbe verändert werden kann.
+</div>
+
+<!-- Element, dessen Sichtbarkeit verändert werden soll -->
+<div id="changeVisibilityElement" class="changeable-element">
+  Dies ist das Element, dessen Sichtbarkeit verändert werden kann.
+</div>
+
+<!-- Schaltfläche zum Ändern der Hintergrundfarbe -->
+<button onclick="changeBackgroundColor()">Hintergrundfarbe ändern</button>
+
+<!-- Schaltfläche zum Ändern der Sichtbarkeit -->
+<button onclick="toggleVisibility()">Sichtbarkeit umschalten</button>
+
+<!-- Schaltfläche zum Aufrufen einer Funktion im <script>-Tag -->
+<button onclick="myFunctionInHeadScript()">Funktion im Kopf aufrufen</button>
+
+<!-- Schaltfläche zum Aufrufen einer Funktion in einer externen .js-Datei -->
+<button onclick="myFunctionInExternalScript()">Funktion in externer Datei aufrufen</button>
+
+<!-- Textbereich zum Eingeben von Text -->
+<textarea id="textareaInput" rows="4" cols="50"></textarea>
+
+<!-- Schaltfläche zum Abrufen des Textbereichsinhalts und Schreiben an eine andere Stelle -->
+<button onclick="writeTextareaContent()">Textbereichsinhalt schreiben</button>
+
+<!-- Ziel für den Textbereichsinhalt -->
+<div id="textOutput"></div>
+
+</body>
+</html>
