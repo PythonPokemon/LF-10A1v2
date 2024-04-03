@@ -1,0 +1,22 @@
+.die {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+  }
+  
+  .active-column {
+    background-color: lightblue;
+  }
+  
+  .highlighted-cell {
+    background-color: lightyellow;
+  }
+  
+  .highlighted-row {
+    background-color: lightgreen;
+  }
+  
