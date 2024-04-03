@@ -21,6 +21,14 @@ function rollDie() {
     });
   }
   
+  // Funktion zum Löschen aller Würfel auf dem Spielfeld
+  function clearAllDice() {
+    var cells = document.querySelectorAll('#game-board td');
+    cells.forEach(function(cell) {
+      cell.innerHTML = '';
+    });
+  }
+  
   // Funktion zum Hervorheben der aktuellen Spielspalte
   function highlightColumn(columnIndex) {
     var columns = document.querySelectorAll('#game-board th');
@@ -53,6 +61,12 @@ function rollDie() {
   function unhighlightRow(rowId) {
     var row = document.getElementById(rowId);
     row.classList.remove('highlighted-row');
+  }
+  
+  // Funktion zum Aktualisieren der Spielblöcke und Würfel
+  function updateGame() {
+    clearAllDice();
+    createAllDice();
   }
   
   // Spielbogen initialisieren
