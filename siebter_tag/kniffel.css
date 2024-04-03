@@ -1,22 +1,9 @@
 .die {
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    border: 1px solid black;
-    text-align: center;
-    line-height: 30px;
-    font-weight: bold;
-  }
-  
-  .active-column {
-    background-color: lightblue;
-  }
-  
-  .highlighted-cell {
-    background-color: lightyellow;
-  }
-  
-  .highlighted-row {
-    background-color: lightgreen;
-  }
-  
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  margin: 5px;
+  text-align: center;
+  line-height: 50px;
+}

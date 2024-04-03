@@ -1,81 +1,17 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kniffel</title>
-  <script src="kniffel.js" defer></script>
-  <link rel="stylesheet" href="kniffel.css">  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kniffel</title>
+    <link rel="stylesheet" href="kniffel.css">
 </head>
 <body>
-  <header></header>
-  <main>
-    <div id="game-board">
-      <table>
-        <thead>
-          <tr>
-            <th>1er</th>
-            <th>2er</th>
-            <th>3er</th>
-            <th>4er</th>
-            <th>5er</th>
-            <th>6er</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr id="row1">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr id="row2">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr id="row3">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr id="row4">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr id="row5">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr id="row6">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <button onclick="updateGame()">Würfeln</button>
-  </main>
-  <footer></footer>
+    <h1>Kniffel</h1>
+    <div id="dice"></div>
+    <button onclick="rollDice()">Würfeln</button>
+    <button onclick="resetGame()">Spiel zurücksetzen</button>
+    <table id="gameBoard"></table>
+    <script src="kniffel.js"></script>
 </body>
 </html>

@@ -1,74 +1,78 @@
-// Funktion zum Generieren eines zufälligen Würfelwerts (1-6)
+const diceElement = document.getElementById('dice');
+const gameBoard = document.getElementById('gameBoard');
+const NUM_DICE = 5;
+const NUM_ROWS = 13;
+const NUM_COLS = 6;
+let diceValues = Array.from({ length: NUM_DICE }, () => rollDie());
+let rollsLeft = 2;
+let activeColumn = 0;
+
+// Spielblock erzeugen
+for (let i = 0; i < NUM_ROWS; i++) {
+    const row = document.createElement('tr');
+    for (let j = 0; j < NUM_COLS; j++) {
+        const cell = document.createElement('td');
+        cell.setAttribute('id', `cell-${i}-${j}`);
+        cell.addEventListener('mouseover', highlightCell);
+        row.appendChild(cell);
+    }
+    gameBoard.appendChild(row);
+}
+
+renderDice();
+
+function rollDice() {
+    if (rollsLeft > 0) {
+        diceValues = diceValues.map(() => rollDie());
+        rollsLeft--;
+        renderDice();
+    }
+}
+
+function resetGame() {
+    diceValues = Array.from({ length: NUM_DICE }, () => rollDie());
+    rollsLeft = 2;
+    renderDice();
+}
+
 function rollDie() {
     return Math.floor(Math.random() * 6) + 1;
-  }
-  
-  // Funktion zum Erstellen eines Würfels und Hinzufügen zu einer Zelle
-  function createDie(cell) {
-    var dieValue = rollDie();
-    var dieElement = document.createElement('div');
-    dieElement.textContent = dieValue;
-    dieElement.classList.add('die');
-    dieElement.classList.add('die-' + dieValue);
-    cell.appendChild(dieElement);
-  }
-  
-  // Funktion zum Erstellen aller Würfel auf dem Spielfeld
-  function createAllDice() {
-    var cells = document.querySelectorAll('#game-board td');
-    cells.forEach(function(cell) {
-      createDie(cell);
+}
+
+function renderDice() {
+    diceElement.innerHTML = '';
+    diceValues.forEach(value => {
+        const dieElement = document.createElement('div');
+        dieElement.classList.add('die');
+        dieElement.textContent = value;
+        diceElement.appendChild(dieElement);
     });
-  }
-  
-  // Funktion zum Löschen aller Würfel auf dem Spielfeld
-  function clearAllDice() {
-    var cells = document.querySelectorAll('#game-board td');
-    cells.forEach(function(cell) {
-      cell.innerHTML = '';
-    });
-  }
-  
-  // Funktion zum Hervorheben der aktuellen Spielspalte
-  function highlightColumn(columnIndex) {
-    var columns = document.querySelectorAll('#game-board th');
-    columns.forEach(function(column, index) {
-      if (index === columnIndex) {
-        column.classList.add('active-column');
-      } else {
-        column.classList.remove('active-column');
-      }
-    });
-  }
-  
-  // Funktion zum Hervorheben einer Zelle beim Hovern
-  function highlightCell(cell) {
-    cell.classList.add('highlighted-cell');
-  }
-  
-  // Funktion zum Entfernen des Hervorhebens einer Zelle
-  function unhighlightCell(cell) {
-    cell.classList.remove('highlighted-cell');
-  }
-  
-  // Funktion zum Hervorheben einer gesamten Zeile
-  function highlightRow(rowId) {
-    var row = document.getElementById(rowId);
-    row.classList.add('highlighted-row');
-  }
-  
-  // Funktion zum Entfernen des Hervorhebens einer gesamten Zeile
-  function unhighlightRow(rowId) {
-    var row = document.getElementById(rowId);
-    row.classList.remove('highlighted-row');
-  }
-  
-  // Funktion zum Aktualisieren der Spielblöcke und Würfel
-  function updateGame() {
-    clearAllDice();
-    createAllDice();
-  }
-  
-  // Spielbogen initialisieren
-  createAllDice();
-  
+    diceElement.innerHTML += `<p>Verbleibende Würfe: ${rollsLeft}</p>`;
+}
+
+function highlightCell(event) {
+    const cell = event.target;
+    const [rowIndex, colIndex] = getCellIndexes(cell.id);
+    
+    // Regel 1: Aktuelle Spielspalte hervorheben
+    if (colIndex === activeColumn) {
+        cell.style.backgroundColor = 'lightblue';
+    }
+    
+    // Regel 3: Gesamte Zeile hervorheben
+    const row = cell.parentNode;
+    row.style.backgroundColor = 'lightyellow';
+    
+    // Regel 2: Bei Bewegen der Maus über eine Zelle, soll jene vervorgehoben werden
+    if (colIndex === activeColumn) {
+        cell.addEventListener('mouseout', function () {
+            cell.style.backgroundColor = '';
+            row.style.backgroundColor = '';
+        });
+    }
+}
+
+function getCellIndexes(cellId) {
+    const [_, rowIndex, colIndex] = cellId.split('-');
+    return [parseInt(rowIndex), parseInt(colIndex)];
+}
