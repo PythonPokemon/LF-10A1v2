@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>	
+	  
+    <script src="js/load.js" defer></script>     
+    
+    <link rel="stylesheet" href="onclick.css">
+
+
+  </head>
+  <body>	   
+    <div class="parent">   
+        <div class="kachel"> </div> 
+            
+            <input type="checkbox" id="check1" name="wuerfel" class="dice"/>
+            <label for="check1">1</label>
+
+            <input type="checkbox" id="check2" name="wuerfel" class="dice"/>
+            <label for="check2" id="label2">3</label>
+
+	</div>
+
+    <script>
+        let alleWuerfel = document.getElementsByClassName('dice'); // Ruft alle Würfel ab in einer Collection
+        let status1 = alleWuerfel[0].checked // uebrüft den check-status des ersten Elements aus der alleWuerfel-Collection
+        let status2 = alleWuerfel[1].checked // uebrüft den check-status des zweiten Elements aus der alleWuerfel-Collection
+    </script>
+  </body>
+</html>

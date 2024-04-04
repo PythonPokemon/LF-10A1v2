@@ -1,0 +1,14 @@
+<root>
+	<gruppe>
+		<teil>
+			<name>Schraube</name>
+			<beschreibung>Diese Schraube ist besonders stark und haltbar.</beschreibung>			
+		</teil>
+		<teil>
+			<name>Mutter</name>
+			<beschreibung>Die Mutter wird zum montieren einer Schraube benötigt.</beschreibung>			
+		</teil>		
+	</gruppe>
+</root>
+
+
