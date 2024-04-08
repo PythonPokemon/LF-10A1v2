@@ -1,0 +1,24 @@
+.child{
+    /* flex-grow stellt das Verhältnis ein, wie Kinder in der Größe zunehmen */
+	flex-grow: 1;
+
+    /* max-width zum begrenzen der Kind-Breite, damit justify-content greift und verwendert werden kann */
+    /* wenn man die Größe nicht begrenzt, waschsen die Kinder immer weiter und es entsteht kein zusätzlicher Platz, der mit justify-content aufgeteilt werden könnte */
+    /* max-width: 150px; */
+}
+
+.parent{	
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* Verwendung des überschüssigen Platzes */
+    justify-content: center;
+}
+
+#extra{
+    /* Kinder unterschiedlich viel waschen lassen, falls mehr Platz vorhanden */
+    /* flex-grow: 8; */
+}
+
