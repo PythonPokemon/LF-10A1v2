@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schülerdaten</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Schülerdaten</h1>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Klasse</th>
+                <th>Letzter Login</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Daten werden hier durch JavaScript eingefügt -->
+        </tbody>
+    </table>
+    <p>Aktuelle deutsche Uhrzeit: <span id="currentTime"></span></p>
+
+    <script>
+        // Funktion zum Laden und Anzeigen der Daten
+        function loadData() {
+            $.getJSON("index.php", function(data){
+                var studentData = data.studentData;
+                var currentTime = data.current_time;
+
+                // Schülerdaten in die Tabelle einfügen
+                $("#studentTable tbody").empty(); // Tabelle leeren, um aktualisierte Daten einzufügen
+                $.each(studentData, function(key, student){
+                    $("#studentTable tbody").append("<tr><td>" + student.name + "</td><td>" + student.klasse + "</td><td>" + student.last_login + "</td></tr>");
+                });
+
+                // Aktuelle deutsche Uhrzeit anzeigen
+                $("#currentTime").text(currentTime);
+            });
+        }
+
+        // Daten beim Laden der Seite und dann alle 5 Sekunden aktualisieren
+        $(document).ready(function(){
+            loadData(); // Daten beim Laden der Seite laden
+            setInterval(loadData, 5000); // Daten alle 5 Sekunden aktualisieren
+
+            // Aktuelle Zeit beim Laden der Seite anzeigen
+            setInterval(function() {
+                var currentTime = new Date().toLocaleString('de-DE');
+                $("#currentTime").text(currentTime);
+            }, 1000); // Aktualisieren jede Sekunde
+        });
+    </script>
+</body>
+</html>
